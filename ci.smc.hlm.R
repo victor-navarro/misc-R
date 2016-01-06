@@ -5,7 +5,7 @@ ci.smc.hlm = function(table, conf = 0.95){
     coeffs = dim(table)[1] #get the number of model coefficients
     oldnames = colnames(table)
     
-    require(MBESS) #load the package required for finding the critical t values
+    library(MBESS) #load the package required for finding the critical t values
     d = d.lower = d.upper = matrix(0, coeffs, 1) #preallocate
     for (n in 1:coeffs){
         d[n] = 2*table[n, 4]/sqrt(table[n, 3])
